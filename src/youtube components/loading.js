@@ -1,8 +1,6 @@
 import React from "react";
 
 const Loading = () => {
-
-
   const LoadingContainer = {
     width: "250px",
     display: "flex",
@@ -55,9 +53,9 @@ const Loading = () => {
               fontWeight: "500",
               width: "200px",
               overflow: "hidden",
-                          backgroundColor: "#272727",
-                          borderRadius: '1rem',
-              height: '30px'
+              backgroundColor: "#272727",
+              borderRadius: "1rem",
+              height: "30px",
             }}
           ></p>
           <p

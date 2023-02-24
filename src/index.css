@@ -232,24 +232,24 @@ body {
   color: #fff;
 } */
 
-.loading{
+.loading {
   animation: blink 1.5s linear infinite;
 }
 
 @keyframes blink {
-  0%{
-    opacity: .9
+  0% {
+    opacity: 0.9;
   }
-  25%{
-    opacity: .2
+  25% {
+    opacity: 0.2;
   }
-  50%{
-    opacity: .5;
+  50% {
+    opacity: 0.5;
   }
-  75%{
-    opacity: .8;
+  75% {
+    opacity: 0.8;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }

@@ -9,7 +9,7 @@ import profile from "../Images/profile.png";
 
 const Navbar = () => {
   const navbar = {
-    width: '100vw',
+    width: "100vw",
     padding: ".5rem 1.3vw",
     display: "flex",
     flexDirection: "row",

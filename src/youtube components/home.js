@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Video from "./video";
 import Loading from "./loading";
 import { videoData } from "./data";
-import {  uuid } from "uuidv4";
+import { uuid } from "uuidv4";
 
 const Home = () => {
   // const API_KEY = "AIzaSyCVdxK0Kdm37l4Qu1uMjPPrkuqR6loPi4k";
@@ -20,7 +20,7 @@ const Home = () => {
     )
       .then((res) => res.json())
       .then((items) => {
-        setItemData({item:items.items, id: uuid});
+        setItemData({ item: items.items, id: uuid });
         setIsFetched(true);
         setIsLoading(false);
       })

@@ -12,11 +12,11 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-section">
-        <Link to='/' className="sidebar-item">
+        <Link to="/" className="sidebar-item">
           <span class="material-symbols-rounded icons">home</span>
           <p>Home</p>
         </Link>
-        <Link to='shorts' className="sidebar-item">
+        <Link to="shorts" className="sidebar-item">
           <img className="icon" src={shorts} alt="" />
           <p>Shorts</p>
         </Link>

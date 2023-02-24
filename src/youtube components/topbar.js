@@ -17,7 +17,7 @@ const Topbar = () => {
       style={{
         // paddingLeft: '2rem',
         width: "77vw",
-        marginRight: '10px',
+        marginRight: "10px",
         display: "flex",
         alignItems: "center",
         overflowX: "auto",

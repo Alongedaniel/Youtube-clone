@@ -7,9 +7,9 @@ import StateContextProvider from "./youtube components/stateProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StateContextProvider>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </StateContextProvider>
 );
 
