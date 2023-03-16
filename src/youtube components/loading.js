@@ -49,7 +49,7 @@ const Loading = () => {
           <p
             style={{
               color: "white",
-              fontSize: "14px",
+              fontSize: "0.9rem",
               fontWeight: "500",
               width: "200px",
               overflow: "hidden",
@@ -63,7 +63,7 @@ const Loading = () => {
               color: "#717171",
               margin: "5px 0",
 
-              fontSize: "14px",
+              fontSize: "0.9rem",
               display: "flex",
               backgroundColor: "#272727",
             }}
@@ -73,7 +73,7 @@ const Loading = () => {
               display: "flex",
               alignItems: "center",
               color: "#717171",
-              fontSize: "14px",
+              fontSize: "0.9rem",
             }}
           >
             <p></p>

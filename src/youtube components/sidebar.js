@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar-section">
         <Link to="/" className="sidebar-item">
-          <span class="material-symbols-rounded icons">home</span>
+          <span className="material-symbols-rounded icons">home</span>
           <p>Home</p>
         </Link>
         <Link to="shorts" className="sidebar-item">
@@ -21,45 +21,45 @@ const Sidebar = () => {
           <p>Shorts</p>
         </Link>
         <div className="sidebar-item">
-          <span class="material-symbols-rounded icons">subscriptions</span>
+          <span className="material-symbols-rounded icons">subscriptions</span>
           <p>Subscription</p>
         </div>
         <div className="border"></div>
       </div>
       <div className="sidebar-section">
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">video_library</span>
+          <span className="material-symbols-outlined icons">video_library</span>
           <p>Library</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">history</span>
+          <span className="material-symbols-outlined icons">history</span>
           <p>History</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">slideshow</span>
+          <span className="material-symbols-outlined icons">slideshow</span>
           <p>Your Videos</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">schedule</span>
+          <span className="material-symbols-outlined icons">schedule</span>
           <p>Watch Later</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">download</span>
+          <span className="material-symbols-outlined icons">download</span>
           <p>Downloads</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">thumb_up</span>
+          <span className="material-symbols-outlined icons">thumb_up</span>
           <p>Liked Videos</p>
         </div>
         <div className="border"></div>
       </div>
       <div className="sidebar-section">
         <p className="sidebar-section-header">Subscriptions</p>
-        <div className="sidebar-item">
+        <Link to="jjchannel" className="sidebar-item">
           <img className="sidebar-image" src={ksi} alt="" />
-          <p>Ksi</p>
+          <p>JJ Olatunji</p>
           <div className="dot"></div>
-        </div>
+        </Link>
         <div className="sidebar-item">
           <img className="sidebar-image" src={logan} alt="" />
           <p>Logan Paul</p>
@@ -90,11 +90,11 @@ const Sidebar = () => {
       <div className="sidebar-section">
         <p className="sidebar-section-header">Explore</p>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">mode_heat</span>
+          <span className="material-symbols-outlined icons">mode_heat</span>
           <p>Trending</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">music_note</span>
+          <span className="material-symbols-outlined icons">music_note</span>
           <p>Music</p>
         </div>
         <div className="sidebar-item">
@@ -105,11 +105,11 @@ const Sidebar = () => {
           <p>Gaming</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">feed</span>
+          <span className="material-symbols-outlined icons">feed</span>
           <p>News</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">sports_tennis</span>
+          <span className="material-symbols-outlined icons">sports_tennis</span>
           <p>Sports</p>
         </div>
         <div className="border"></div>
@@ -160,19 +160,19 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-section">
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">settings</span>
+          <span className="material-symbols-outlined icons">settings</span>
           <p>Settings</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">flag</span>
+          <span className="material-symbols-outlined icons">flag</span>
           <p>Report History</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">help</span>
+          <span className="material-symbols-outlined icons">help</span>
           <p>Help</p>
         </div>
         <div className="sidebar-item">
-          <span class="material-symbols-outlined icons">sms_failed</span>
+          <span className="material-symbols-outlined icons">sms_failed</span>
           <p>Send Feedback</p>
         </div>
         <div className="border"></div>

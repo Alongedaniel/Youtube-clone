@@ -13,18 +13,7 @@ const Topbar = () => {
   };
 
   return (
-    <div
-      style={{
-        // paddingLeft: '2rem',
-        width: "77vw",
-        marginRight: "10px",
-        display: "flex",
-        alignItems: "center",
-        overflowX: "auto",
-        justifyContent: "space-between",
-      }}
-      className="topbar"
-    >
+    <div className="topbar">
       <p style={topbarItem}>All</p>
       <p style={topbarItem}>Gaming</p>
       <p style={topbarItem}>ReactionVideos</p>

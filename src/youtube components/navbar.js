@@ -1,11 +1,9 @@
 import React from "react";
 import logoImage from "../Images/logo.png";
 import menu from "../Images/menubar.png";
-import search_icon from "../Images/search.png";
 import mic from "../Images/mic.png";
-import create from "../Images/create.png";
-import notification from "../Images/notification.png";
-import profile from "../Images/profile.png";
+import profile from "../Images/daniel.JPG";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navbar = {
@@ -19,17 +17,12 @@ const Navbar = () => {
     // position: "fixed",
     // width: "100%",
     zIndex: "1",
-  };
-
-  const search = {
-    display: "flex",
-    alignItems: "center",
-    gap: ".5rem",
+    // border: "1px solid magenta"
   };
 
   const logoName = {
     color: "white",
-    fontSize: "18px",
+    fontSize: "1.1rem",
     letterSpacing: "-1px",
     position: "relative",
   };
@@ -37,17 +30,18 @@ const Navbar = () => {
   const navbarLeft = {
     display: "flex",
     alignItems: "center",
-    width: "160px",
+    // width: "10%",
     justifyContent: "space-between",
   };
 
   const logo = {
     display: "flex",
     alignItems: "center",
+    textDecoration: "none",
   };
 
   const searchInput = {
-    width: "550px",
+    width: "100%",
     height: "40px",
     borderTopLeftRadius: "1.5rem",
     borderBottomLeftRadius: "1.5rem",
@@ -55,11 +49,12 @@ const Navbar = () => {
     border: "none",
     backgroundColor: "#0f0f0f",
     outline: "none",
-    fontSize: "18px",
+    fontSize: "1.1rem",
     color: "#FFFFFF",
   };
 
   const searchBox = {
+    width: "100%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -71,7 +66,7 @@ const Navbar = () => {
   };
 
   const navbarRight = {
-    width: "150px",
+    // width: "10%",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -80,27 +75,32 @@ const Navbar = () => {
   return (
     <div style={navbar}>
       <div style={navbarLeft}>
-        <img src={menu} alt="" className="btn" />
-        <div style={logo}>
+        <img src={menu} alt="" className="btn hamburger" />
+        <Link to="/" style={logo}>
           <img src={logoImage} alt="" className="logo-image" />
           <h2 style={logoName}>
             YouTube <span className="span">NG</span>
           </h2>
-        </div>
+        </Link>
       </div>
 
-      <div style={search}>
+      <div className="search">
         <div style={searchBox}>
           <input type="text" placeholder="Search" style={searchInput} />
-          <img src={search_icon} alt="" className="search-icon" />
+          <span class="material-symbols-outlined search-icon">search</span>
         </div>
         <img src={mic} alt="" className="mic" />
       </div>
       <div style={navbarRight}>
-        <img src={create} alt="" className="btn" />
+        <span class="material-symbols-outlined btn icons navbar-icon">
+          video_call
+        </span>
+        <span class="material-symbols-outlined mobile-search-icon">search</span>
         <div>
-          <img src={notification} alt="" className="btn notification" />
-          <span className="num-badge">{0}</span>
+          <span class="material-symbols-outlined btn icons navbar-icon">
+            notifications
+          </span>
+          {/* <span className="num-badge">{0}</span> */}
         </div>
         <img src={profile} alt="" className="btn profile" />
       </div>
