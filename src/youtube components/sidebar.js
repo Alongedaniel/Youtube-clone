@@ -57,11 +57,11 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-section">
         <p className="sidebar-section-header">Subscriptions</p>
-        <Link to="jjchannel" className="sidebar-item">
+        <div className="sidebar-item">
           <img className="sidebar-image" src={ksi} alt="" />
           <p>JJ Olatunji</p>
           <div className="blue-dot"></div>
-        </Link>
+        </div>
         <div className="sidebar-item">
           <img className="sidebar-image" src={logan} alt="" />
           <p>Logan Paul</p>
