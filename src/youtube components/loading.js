@@ -2,7 +2,7 @@ import React from "react";
 
 const Loading = () => {
   const LoadingContainer = {
-    width: "250px",
+    width: "230px",
     display: "flex",
     margin: "0 5px 3rem 10px",
     flexDirection: "column",
@@ -10,7 +10,7 @@ const Loading = () => {
   };
 
   const thumbnailImage = {
-    width: "250px",
+    width: "230px",
     height: "150px",
     borderRadius: ".8rem",
     marginBottom: "10px",
@@ -51,7 +51,7 @@ const Loading = () => {
               color: "white",
               fontSize: "0.9rem",
               fontWeight: "500",
-              width: "200px",
+              width: "170px",
               overflow: "hidden",
               backgroundColor: "#272727",
               borderRadius: "1rem",

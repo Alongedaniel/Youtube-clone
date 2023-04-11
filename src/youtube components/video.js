@@ -2,34 +2,22 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "./stateProvider";
 
-const Video = ({ data, stats, thumbnail, id }) => {
+const Video = ({ data, stats, thumbnail, id, details }) => {
   const {
     setVideoId,
-    // videoId,
+    videoId,
     setVideoTitle,
     setChannelImage,
     setChannelName,
     setViewCount,
+    kFormatter,
+    formatDuration,
+    getTimeDiffString,
+    maxLength,
+    setLikeCount,
+    setQuery
   } = useContext(AppContext);
   const [style, setStyle] = useState("none");
-
-  function kFormatter(num) {
-    if (Math.abs(num) > 999 && Math.abs(num) < 999999) {
-      return Math.sign(num) * (Math.abs(num) / 1000).toFixed(0) + "k";
-    } else if (Math.abs(num) > 999999 && !(Math.abs(num) < 999999))
-      return Math.sign(num) * (num / 1000000).toFixed(1) + "M";
-    else return Math.sign(num) * Math.abs(num);
-  }
-
-  // const id = useParams()
-
-  // const videoContainer = {
-  //   width: "250px",
-  //   display: "flex",
-  //   margin: "0 5px 3rem 10px",
-  //   flexDirection: "column",
-  //   position: "relative",
-  // };
 
   const channelImage = {
     width: "40px",
@@ -51,10 +39,12 @@ const Video = ({ data, stats, thumbnail, id }) => {
         setChannelImage(thumbnail);
         setChannelName(data.channelTitle);
         setViewCount(kFormatter(stats.viewCount));
+        setLikeCount(kFormatter(stats.likeCount));
+        setQuery(data.channelTitle);
       }}
     >
       <Link
-        to={`playvideo`}
+        to={`playvideo/watch=${videoId}`}
         style={{
           display: "flex",
           alignItems: "flex-end",
@@ -75,7 +65,7 @@ const Video = ({ data, stats, thumbnail, id }) => {
             marginRight: "8px",
           }}
         >
-          34:12
+          {formatDuration(details.duration)}
         </p>
       </Link>
       <div
@@ -86,12 +76,12 @@ const Video = ({ data, stats, thumbnail, id }) => {
         }}
       >
         <div>
-          <Link to={`playvideo`}>
+          <Link to={`playvideo/${videoId}`}>
             <img style={channelImage} src={thumbnail} alt="" />
           </Link>
         </div>
         <Link
-          to={`playvideo`}
+          to={`playvideo/${videoId}`}
           style={{
             flex: "1",
             textDecoration: "none",
@@ -103,14 +93,15 @@ const Video = ({ data, stats, thumbnail, id }) => {
               color: "white",
               fontSize: "0.9rem",
               fontWeight: "500",
-              // height: "32px",
-              // overflowY: "hidden",
             }}
           >
-            {data.title}
+            {data.title.length > maxLength ? data.title.slice(0, maxLength) + "..." : data.title}
           </p>
           <div className="channel-details">
-            <p className="channel-title">{data.channelTitle}</p>
+            <Link to={`channel/${data.channelTitle}`} onClick={() => {
+              setQuery(data.channelTitle)
+              setChannelImage(thumbnail)
+            }} className="channel-title">{data.channelTitle}</Link>
             <p
               className="dot"
               style={{
@@ -132,8 +123,19 @@ const Video = ({ data, stats, thumbnail, id }) => {
               }}
             >
               <p className="view-count">{kFormatter(stats.viewCount)} views</p>
-              {/* <p>{stats.viewCount} views</p> */}
-              {/* <p>{data.publishedAt}</p> */}
+              <p
+                className="dot"
+                style={{
+                  backgroundColor: "#717171",
+                  width: "2px",
+                  height: "2px",
+                  borderRadius: "100%",
+                  margin: "0 5px",
+                }}
+              ></p>
+              <p className="view-count">
+                {getTimeDiffString(new Date(data.publishedAt))}
+              </p>
             </div>
           </div>
         </Link>
@@ -148,16 +150,16 @@ const Video = ({ data, stats, thumbnail, id }) => {
             }}
             className="material-symbols-outlined"
             onClick={() => {
-              if (option.display === "none") setStyle("block");
+              if (option.display === "none") setStyle("flex");
               else setStyle("none");
             }}
           >
             more_vert
           </span>
           <div>
-            <Link style={option} className="option">
+            <Link to={`history`} style={option} className="option">
               <span className="material-symbols-outlined icons">schedule</span>
-              <p>Watch Later</p>
+              <p>History</p>
             </Link>
           </div>
         </div>

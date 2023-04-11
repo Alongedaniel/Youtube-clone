@@ -1,34 +1,39 @@
-import useFetch from "../fetch";
-import { videoData } from "../data";
-import Video from "../video";
-import Loading from "../loading";
+import {useContext, useState, useEffect} from 'react'
+import { AppContext } from "../stateProvider";
+import ChannelVideos from './channelvideos'
 
-const JJOlatunji = () => {
-    const { itemData, error, isFetched, isLoading } = useFetch(
-      "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UCGmnsW623G1r-Chmo5RB4Yw&maxResults=50&key=AIzaSyDEiEN4yyidHTdgQa7b9AR1_TEeQ1Ng9TM"
-    );
-    const stats = {
-        viewCount: 200
-    }
-    console.log('item', itemData.item)
+const Channel = () => {
+  const [data, setData] = useState([])
+  const {API_KEY, query} = useContext(AppContext)
+
+  useEffect(() => {
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&key=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => setData(data.items));
+  }, [query, setData, API_KEY]);
+
+
     return (
-      <div>
-        {error && <div style={{ color: "red", fontSize: "2rem" }}>{error}</div>}
-        <div className="home" style={{height: '82vh'}}>
-          {isFetched &&
-            itemData.item.map((data) => (
-              <Video
+      <div style={{height: '67.5vh'}}>
+        <div className='channel-header'>
+          <h1>{query}</h1>
+          <p>20M Subscribers</p>
+        </div>
+        <div className="home">
+          {query ?
+            data?.map((data) => (
+              <ChannelVideos
                 key={data.id}
                 id={data.id}
                 data={data.snippet}
-                stats={stats.viewCount}
                 thumbnail={data.snippet.thumbnails.medium.url}
               />
-            ))}
-          {isLoading && videoData.map((data) => <Loading />)}
+            )): null}
         </div>
       </div>
     );
 }
 
-export default JJOlatunji
+export default Channel

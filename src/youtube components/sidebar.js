@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext} from "react";
 import shorts from "../Images/shorts.png";
 import ksi from "../Images/ksi.jpeg";
 import logan from "../Images/logan.jpg";
@@ -7,12 +7,14 @@ import sidemen from "../Images/sidemen.jpeg";
 import reacts from "../Images/reacts.jpg";
 import p2 from "../Images/p2.jpg";
 import { Link } from "react-router-dom";
+import { AppContext } from "./stateProvider";
 
 const Sidebar = () => {
+  const { setTag } = useContext(AppContext)
   return (
     <div className="sidebar">
       <div className="sidebar-section">
-        <Link to="/" className="sidebar-item">
+        <Link to="/" onClick={() => setTag('')} className="sidebar-item">
           <span className="material-symbols-rounded icons">home</span>
           <p>Home</p>
         </Link>
@@ -31,10 +33,10 @@ const Sidebar = () => {
           <span className="material-symbols-outlined icons">video_library</span>
           <p>Library</p>
         </div>
-        <div className="sidebar-item">
+        <Link to={`history`} className="sidebar-item">
           <span className="material-symbols-outlined icons">history</span>
           <p>History</p>
-        </div>
+        </Link>
         <div className="sidebar-item">
           <span className="material-symbols-outlined icons">slideshow</span>
           <p>Your Videos</p>
@@ -58,32 +60,32 @@ const Sidebar = () => {
         <Link to="jjchannel" className="sidebar-item">
           <img className="sidebar-image" src={ksi} alt="" />
           <p>JJ Olatunji</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </Link>
         <div className="sidebar-item">
           <img className="sidebar-image" src={logan} alt="" />
           <p>Logan Paul</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </div>
         <div className="sidebar-item">
           <img className="sidebar-image" src={boss} alt="" />
           <p>MrWhoseTheBoss</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </div>
         <div className="sidebar-item">
           <img className="sidebar-image" src={sidemen} alt="" />
           <p>Sidemen</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </div>
         <div className="sidebar-item">
           <img className="sidebar-image" src={reacts} alt="" />
           <p>Sidemen Reacts</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </div>
         <div className="sidebar-item">
           <img className="sidebar-image" src={p2} alt="" />
           <p>P2isthename</p>
-          <div className="dot"></div>
+          <div className="blue-dot"></div>
         </div>
         <div className="border"></div>
       </div>

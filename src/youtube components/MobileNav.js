@@ -21,11 +21,9 @@ const MobileBottomNav = () => {
         </span>
         <p>Subscriptions</p>
       </Link>
-      <Link className=" mobile-bottom-nav-item">
-        <span className="material-symbols-outlined mobile-icons">
-          video_library
-        </span>
-        <p>Library</p>
+      <Link to={`history`} className="mobile-bottom-nav-item">
+        <span className="material-symbols-outlined icons">history</span>
+        <p>History</p>
       </Link>
     </div>
   );

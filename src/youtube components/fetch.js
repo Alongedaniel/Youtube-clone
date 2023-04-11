@@ -15,7 +15,7 @@ const useFetch = (url) => {
         return res.json();
       })
       .then((items) => {
-        setItemData({ item: items.items });
+        setItemData( items.items );
         setIsFetched(true);
         setIsLoading(false);
       })
