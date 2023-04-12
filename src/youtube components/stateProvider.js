@@ -108,19 +108,21 @@ const StateContextProvider = ({ children }) => {
 
   useEffect(() => {
     const stateData = localStorage.getItem('states')
-    const stateValues = JSON.parse(stateData)
-    setVideoId(stateValues.videoId)
-    setVideoTitle(stateValues.videoTitle)
-    setChannelImage(stateValues.channelImage)
-    setChannelName(stateValues.channelName)
-    setViewCount(stateValues.viewCount)
-    setSearchQuery(stateValues.searchQuery)
-    setSearchText(stateValues.searchText)
-    setStyle(stateValues.style)
-    setTag(stateValues.tag)
-    setData(stateValues.data)
-    setList(stateValues.list)
-    setQuery(stateValues.query)
+    if (stateData !== undefined) {
+      const stateValues = JSON.parse(stateData)
+      setVideoTitle(stateValues.videoTitle)
+      setVideoId(stateValues.videoId)
+      setChannelImage(stateValues.channelImage)
+      setChannelName(stateValues.channelName)
+      setViewCount(stateValues.viewCount)
+      setSearchQuery(stateValues.searchQuery)
+      setSearchText(stateValues.searchText)
+      setStyle(stateValues.style)
+      setTag(stateValues.tag)
+      setData(stateValues.data)
+      setList(stateValues.list)
+      setQuery(stateValues.query)
+    }
   }, [])
 
   useEffect(() => {
