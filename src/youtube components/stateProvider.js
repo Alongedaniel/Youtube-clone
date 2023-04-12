@@ -74,14 +74,7 @@ const StateContextProvider = ({ children }) => {
 
   const getHistory = () => {
     if (
-      videoId !== "" &&
-      !(videoId in list) &&
-      videoTitle !== "" &&
-      !(videoTitle in list) &&
-      channelImage !== "" &&
-      !(channelImage in list) &&
-      channelName !== "" &&
-      !(channelName in list)
+      list
     ) {
       list.push({
         videoId: videoId,
