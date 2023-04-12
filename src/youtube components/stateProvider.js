@@ -106,24 +106,24 @@ const StateContextProvider = ({ children }) => {
   const [likeCount, setLikeCount] = useState("");
   const maxLength = 40;
 
-  // useEffect(() => {
-  //   const stateData = localStorage.getItem('states')
-  //   if (stateData !== undefined) {
-  //     const stateValues = JSON.parse(stateData)
-  //     setVideoTitle(stateValues.videoTitle)
-  //     setVideoId(stateValues.videoId)
-  //     setChannelImage(stateValues.channelImage)
-  //     setChannelName(stateValues.channelName)
-  //     setViewCount(stateValues.viewCount)
-  //     setSearchQuery(stateValues.searchQuery)
-  //     setSearchText(stateValues.searchText)
-  //     setStyle(stateValues.style)
-  //     setTag(stateValues.tag)
-  //     setData(stateValues.data)
-  //     setList(stateValues.list)
-  //     setQuery(stateValues.query)
-  //   }
-  // }, [])
+  useEffect(() => {
+    const stateData = localStorage.getItem('states')
+    if (stateData !== undefined) {
+      const stateValues = JSON.parse(stateData)
+      setVideoTitle(stateValues.videoTitle)
+      setVideoId(stateValues.videoId)
+      setChannelImage(stateValues.channelImage)
+      setChannelName(stateValues.channelName)
+      setViewCount(stateValues.viewCount)
+      setSearchQuery(stateValues.searchQuery)
+      setSearchText(stateValues.searchText)
+      setStyle(stateValues.style)
+      setTag(stateValues.tag)
+      setData(stateValues.data)
+      setList(stateValues.list)
+      setQuery(stateValues.query)
+    }
+  }, [])
 
   useEffect(() => {
     const stateValues = {
