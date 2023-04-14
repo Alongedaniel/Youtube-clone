@@ -5,7 +5,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 const VideoPlayer = () => {
-  const { videoId, videoTitle, channelImage, channelName, viewCount, likeCount, API_KEY } =
+  const { videoId, videoTitle, channelImage, channelName, viewCount, likeCount, API_KEY, maxLength } =
     useContext(AppContext);
 
   const getData = () => {
@@ -39,7 +39,11 @@ const VideoPlayer = () => {
           marginBottom: "1rem",
         }}
       >
-        <h1 className="video-title">{videoTitle}</h1>
+        <h1 className="video-title">
+          {videoTitle.length > maxLength
+            ? videoTitle.slice(0, maxLength) + "..."
+            : videoTitle}
+        </h1>
         <div className="player-details">
           <img className="channel-image" src={channelImage} alt={channelName} />
           <div>
@@ -49,12 +53,12 @@ const VideoPlayer = () => {
                 color: "#fff",
               }}
             >
-              {viewCount ? viewCount : '10M'} views
+              {viewCount ? viewCount : "10M"} views
             </p>
           </div>
           <div className="like-count">
             <span class="material-symbols-outlined">thumb_up</span>
-            <p>{likeCount? likeCount: '20K'}</p>
+            <p>{likeCount ? likeCount : "20K"}</p>
             <p>|</p>
             <span class="material-symbols-outlined">thumb_down</span>
           </div>
@@ -69,7 +73,10 @@ const VideoPlayer = () => {
       />
       <div className="video-player-bottom">
         <div className="comment-container">
-          {error? <p>error loading comments</p> : data?.data.items.map((item) => (
+          {error ? (
+            <p>error loading comments</p>
+          ) : (
+            data?.data.items.map((item) => (
               <div className="comment-details">
                 <img
                   className="channel-image"
@@ -100,7 +107,8 @@ const VideoPlayer = () => {
                   </div>
                 </div>
               </div>
-          ))}
+            ))
+          )}
         </div>
         <MoreVideos />
       </div>

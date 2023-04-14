@@ -118,7 +118,7 @@ const Video = ({ data, stats, thumbnail, id, details }) => {
                 display: "flex",
                 alignItems: "center",
                 color: "#717171",
-                fontSize: "0.9rem",
+                fontSize: "1rem",
                 textDecoration: "none",
               }}
             >
